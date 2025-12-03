@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+         let str = "hello world";
+
+function count() {
+  let count = 0;
+  for (let cd of str) {
+    count++;
+  }
+  console.log(count);
+}
+
+count();
+
+
+let details = [
+    {
+        name:"sri prakash",
+        education : "bsc it",
+        address : "ooty"
+    },
+    {
+        name:"sri prakash",
+        education : "bsc it",
+        address : "ooty"
+    },
+    {
+        name:"sri prakash",
+        education : "bsc it",
+        address : "ooty"
+    },
+]
+
+
+let unique2 = [
+    ...new Set(details.map(JSON.stringify))
+].map(JSON.parse);
+
+console.log(unique2);
+
+let arr = [1, 2, 3, 2, 1, 4, 5, 3, 3, 4, 5, 8, 9, 0];
+
+function repeatCount() {
+  let obj = {};
+
+  for (let el of arr) {
+    if (obj[el]) {
+      obj[el] += 1;
+    } else {
+      obj[el] = 1;
+    }
+  }
+
+  console.log("Counts:", obj);
+
+  let unique = Object.keys(obj);  
+  console.log("Unique:", unique);
+}
+
+repeatCount();
+
+
+let unique = new Set(arr);
+let uniqueArr = [...unique];
+
+console.log(uniqueArr);
+
+function removeDuplicate() {
+  let newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let flag = false;
+
+    for (let j = 0; j < newArray.length; j++) {
+      if (arr[i] == newArray[j]) {
+        flag = true;
+        break;
+      }
+    }
+
+    if (!flag) {
+      newArray.push(arr[i]);
+    }
+  }
+
+  console.log(newArray);
+}
+
+removeDuplicate();
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
